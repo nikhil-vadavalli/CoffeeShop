@@ -17,7 +17,7 @@ public class Barista extends Employee {
             skillLevel = 0;
     }
 
-    public Coffee makeCoffee(Coffee coffee){
+    public Coffee makeCoffee(Coffee coffee) {
         return coffee;
     }
 

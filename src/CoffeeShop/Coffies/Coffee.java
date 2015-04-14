@@ -5,17 +5,24 @@ package CoffeeShop.Coffies;
 public class Coffee {
     private double tempreture;
     private double cost;
-    private int size;
+    private String size;
     private String name;
     private String madeFor;
     private Ingredient[] ingredients;
 
     public Coffee(Ingredient[] ingredients, double temperature, int size, String name, String madeFor) {
         this.tempreture = temperature;
-        this.size = size;
         this.name = name;
         this.ingredients = ingredients;
         this.madeFor = madeFor;
+
+        if (size >= 1)
+            this.size = "Small";
+        else if (size == 2)
+            this.size = "Medium";
+        else
+            this.size = "Large";
+
 
         double total = 0;
         for (Ingredient i: ingredients)
@@ -32,11 +39,16 @@ public class Coffee {
         return madeFor;
     }
 
-    public int getSize() {
+    public String getSize() {
         return size;
     }
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return size + " " + name;
     }
 }

@@ -20,4 +20,21 @@ public class Order {
             total += c.getCost();
         return total;
     }
+
+    @Override
+    public String toString() {
+        String total = "";
+        total += "============ORDER===========\n";
+        total += "ORDER SIZE: " + getOrderSize() + "\n";
+        total += "ORDER COST: " + getOrderCost() + "\n";
+        total += "============================\n";
+
+        for (Coffee c : order)
+            total += c.toString() + "\n";
+
+        total += "============================\n";
+
+        return total;
+
+    }
 }

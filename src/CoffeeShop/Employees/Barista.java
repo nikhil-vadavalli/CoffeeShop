@@ -1,6 +1,7 @@
 package CoffeeShop.Employees;
 
 import CoffeeShop.Coffies.Coffee;
+import CoffeeShop.Coffies.Order;
 
 /**
  * Created by 38512 on 4/14/15.
@@ -8,8 +9,9 @@ import CoffeeShop.Coffies.Coffee;
 public class Barista extends Employee {
     private int skillLevel = 0;
 
-    public Barista(String name, int salary, int skillLevel) {
-        super(name, salary);
+    public Barista(String name, double wagePerCup, int skillLevel) {
+        super(name, wagePerCup);
+
 
         if (skillLevel > 10)
             skillLevel = 10;
@@ -17,8 +19,9 @@ public class Barista extends Employee {
             skillLevel = 0;
     }
 
-    public Coffee makeCoffee(Coffee coffee) {
-        return coffee;
+    public void makeOrder(Order coffees) {
+        for (Coffee c : coffees.getOrder())
+            c.make();
     }
 
 }

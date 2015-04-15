@@ -8,7 +8,7 @@ import CoffeeShop.Coffies.Ingredient;
  */
 public class CafeMocha extends Coffee {
 
-    public CafeMocha(int size, String madeFor) {
+    public CafeMocha(int size) {
         super(
                 new Ingredient[]{
                 new Ingredient("Espresso", 0.5),
@@ -16,6 +16,6 @@ public class CafeMocha extends Coffee {
                 new Ingredient("Steamed Milk", 0.5),
                 new Ingredient("Whipped Cream", 1),
                 }
-                , 90, size, "CafeMocha",madeFor);
+                , 90, size, "CafeMocha");
     }
 }
